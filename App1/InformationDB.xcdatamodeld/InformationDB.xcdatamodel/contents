@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Information" representedClassName="Information" syncable="YES" codeGenerationType="class">
+        <attribute name="textInfo" optional="YES" attributeType="String"/>
+        <attribute name="topic" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Information" positionX="-45" positionY="-9" width="128" height="59"/>
+    </elements>
+</model>
