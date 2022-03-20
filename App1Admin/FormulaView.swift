@@ -1,8 +1,8 @@
 //
 //  FormulaView.swift
-//  App1
+//  App1Admin
 //
-//  Created by Arnella Tolegen on 27.02.2022.
+//  Created by Arnella Tolegen on 20.03.2022.
 //
 
 import Foundation
@@ -19,7 +19,7 @@ struct FormulaView: View{
         NavigationView{
             VStack{
                 List(formulas){ formula in HStack{
-                    Text("Название формулы: \(formula.name ?? "Unknown"), Формула: \(formula.formula ?? "Unknown"), Параметры: \(formula.parameters ?? "Unknown"), Единица измерения: \(formula.measure ?? "Unknown")")
+                    Text("Название формулы: \(formula.name ?? "Unknown"), Формула: \(formula.formula ?? "Unknown"), Параметры: \(formula.parameters ?? "Unknown"), Единица измерения: \(formula.measure ?? "Unknown"), Информация: \(formula.information ?? "Unknown")")
                     }
                 }
                 

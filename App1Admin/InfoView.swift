@@ -1,8 +1,8 @@
 //
 //  InfoView.swift
-//  App1
+//  App1Admin
 //
-//  Created by Arnella Tolegen on 10.03.2022.
+//  Created by Arnella Tolegen on 20.03.2022.
 //
 
 import Foundation
@@ -33,7 +33,7 @@ struct InfoView: View{
                     try? moc.delete(infoForDelete)
                 }.foregroundColor(.red)
                 Spacer().frame(width: 10, height: 50)
-                NavigationLink(destination: AddInfo(), label: {Text("Добавить")}) 
+                NavigationLink(destination: AddInfo(), label: {Text("Добавить")})
                 
             }.navigationTitle("Справочник")
         }

@@ -1,8 +1,8 @@
 //
 //  FormulaAdding.swift
-//  App1
+//  App1Admin
 //
-//  Created by Arnella Tolegen on 03.03.2022.
+//  Created by Arnella Tolegen on 20.03.2022.
 //
 
 import Foundation
@@ -16,6 +16,7 @@ struct AddFormula: View{
     @State var formula = ""
     @State var parameters = ""
     @State var measure = ""
+    @State var information = ""
     
     var body: some View{
         NavigationView{
@@ -24,7 +25,7 @@ struct AddFormula: View{
                 TextField("Формула",text: $formula)
                 TextField("Параметры",text: $parameters)
                 TextField("Единица измерения",text: $measure)
-                
+                TextField("Единица измерения",text: $information)
                 Button("Сохранить"){
                     do{
                         let formula = Formulas(context: moc)
@@ -32,6 +33,7 @@ struct AddFormula: View{
                         formula.formula = self.formula
                         formula.parameters = parameters
                         formula.measure = measure
+                        formula.information = information
                         
                         try moc.save()
                     }catch{
@@ -39,14 +41,14 @@ struct AddFormula: View{
                     }
                 }
                 
-                let formula = setFormula(formulaName: self.formulaName, formula1: self.formula, parameters: self.parameters, measure: self.measure)
+                let formula = setFormula(formulaName: self.formulaName, formula1: self.formula, parameters: self.parameters, measure: self.measure, information: self.information)
                 
             }.navigationTitle("Добавление формул")
         }
     }
 }
 
-func setFormula(formulaName: String, formula1: String, parameters: String, measure: String) -> Formulas{
+func setFormula(formulaName: String, formula1: String, parameters: String, measure: String, information: String) -> Formulas{
     @FetchRequest(sortDescriptors: []) var formulas: FetchedResults<Formulas>
     @Environment(\.managedObjectContext) var moc
     let formula = Formulas(context: moc)
@@ -54,5 +56,6 @@ func setFormula(formulaName: String, formula1: String, parameters: String, measu
     formula.formula = formulaName
     formula.parameters = parameters
     formula.measure = measure
+    formula.information = information
     return formula
 }

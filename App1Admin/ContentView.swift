@@ -1,15 +1,13 @@
 //
-//  AdminPanel.swift
-//  App1
+//  ContentView.swift
+//  App1Admin
 //
-//  Created by Arnella Tolegen on 10.03.2022.
+//  Created by Arnella Tolegen on 20.03.2022.
 //
 
-import Foundation
 import SwiftUI
 
-struct AdminPanel: View {
-    
+struct ContentView: View {
     var body: some View {
         NavigationView{
             Form{
@@ -21,5 +19,11 @@ struct AdminPanel: View {
             }.navigationTitle("Изменение данных")
             
         }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }

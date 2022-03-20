@@ -3,6 +3,15 @@
     <entity name="Formulas" representedClassName="Formulas" syncable="YES" codeGenerationType="class">
         <attribute name="formula" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="information" optional="YES" attributeType="String"/>
+        <attribute name="measure" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="parameters" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Formulas1" representedClassName="Formulas" syncable="YES" codeGenerationType="class">
+        <attribute name="formula" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="information" optional="YES" attributeType="String"/>
         <attribute name="measure" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="parameters" optional="YES" attributeType="String"/>
@@ -12,7 +21,8 @@
         <attribute name="topic" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Formulas" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Formulas" positionX="-63" positionY="-18" width="128" height="119"/>
         <element name="Information" positionX="-63" positionY="9" width="128" height="59"/>
+        <element name="Formulas1" positionX="-63" positionY="27" width="128" height="119"/>
     </elements>
 </model>

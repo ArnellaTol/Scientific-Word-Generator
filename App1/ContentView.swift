@@ -8,18 +8,58 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var formulas: FetchedResults<Formulas>
+    @State var num = 0
+    
+    @FetchRequest(sortDescriptors: []) var infos: FetchedResults<Information>
+    @State var num1 = 0
+    
+    func getFormulas() -> [String]{
+        var allNames: [String] = []
+        for f in formulas{
+            allNames.append(f.name ?? "Unknown")
+        }
+        return allNames
+    }
+
+    func getTopics() -> [String]{
+        var allTopics: [String] = []
+        for t in infos{
+            allTopics.append(t.topic ?? "Unknown")
+        }
+        return allTopics
+    }
     var body: some View {
-        NavigationView{
-            ZStack{
-                Image("background").resizable()
-                VStack{
-                    NavigationLink(destination: UserPanel()){
-                        Text("Пользователь (ученик)")}
+        let formulaNames: [String] = getFormulas()
+        let infoTopics: [String] = getTopics()
+        
+        VStack{
+            NavigationView{
+                Form{
+                    Picker(selection: $num1, label: Text("Темы")){
+                        ForEach(infoTopics, id: \.self) { tName in
+                            Text(tName)
+                        }
+                    }
+                    Text(infos[num1].topic ?? "")
+                    Text(infos[num1].textInfo ?? "")
+                }.navigationTitle("Справочник по физике")
+            }
+            NavigationView{
+                Form{
                     
-                    NavigationLink(destination: CheckAdmilAccount()){
-                        Text("Администратор (учитель)")}
+                    Picker(selection: $num, label: Text("Названия формул")){
+                        ForEach(formulaNames, id: \.self) { formulaN in
+                            Text(formulaN)
+                        }
+                    }
+                    Text(formulas[num].name ?? "")
+                    Text(formulas[num].formula ?? "")
+                    Text(formulas[num].information ?? "")
                     
-                }.navigationTitle("Аккаунт")
+                    
+                }.navigationTitle("Формулы")
             }
         }
     }

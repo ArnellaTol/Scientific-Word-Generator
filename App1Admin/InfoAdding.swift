@@ -1,8 +1,8 @@
 //
 //  InfoAdding.swift
-//  App1
+//  App1Admin
 //
-//  Created by Arnella Tolegen on 13.03.2022.
+//  Created by Arnella Tolegen on 20.03.2022.
 //
 
 import Foundation

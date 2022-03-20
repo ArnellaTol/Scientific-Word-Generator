@@ -1,13 +1,12 @@
 //
 //  DataBaseController.swift
-//  App1
+//  App1Admin
 //
-//  Created by Arnella Tolegen on 03.03.2022.
+//  Created by Arnella Tolegen on 20.03.2022.
 //
 
 import Foundation
 import CoreData
-
 
 class DataBaseController: ObservableObject{
     let contailer = NSPersistentContainer(name: "FormulasDB")
