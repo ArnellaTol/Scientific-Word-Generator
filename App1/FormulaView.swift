@@ -25,7 +25,7 @@ struct FormulaView: View{
                 
                 TextField("Формула",text: $formulaName)
                 Button("Удалить"){
-                    for var formula1 in formulas {
+                    for formula1 in formulas {
                         if(formulaName == formula1.name){
                             formulaForDelete = formula1
                         }

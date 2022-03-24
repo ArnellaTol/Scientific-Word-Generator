@@ -41,13 +41,14 @@ struct AddFormula: View{
                     }
                 }
                 
-                let formula = setFormula(formulaName: self.formulaName, formula1: self.formula, parameters: self.parameters, measure: self.measure, information: self.information)
+                //let formula = setFormula(formulaName: self.formulaName, formula1: self.formula, parameters: self.parameters, measure: self.measure, information: self.information)
                 
             }.navigationTitle("Добавление формул")
         }
     }
 }
 
+/*
 func setFormula(formulaName: String, formula1: String, parameters: String, measure: String, information: String) -> Formulas{
     @FetchRequest(sortDescriptors: []) var formulas: FetchedResults<Formulas>
     @Environment(\.managedObjectContext) var moc
@@ -59,3 +60,5 @@ func setFormula(formulaName: String, formula1: String, parameters: String, measu
     formula.information = information
     return formula
 }
+*/
+

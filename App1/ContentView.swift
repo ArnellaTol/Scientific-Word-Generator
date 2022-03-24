@@ -33,9 +33,10 @@ struct ContentView: View {
     var body: some View {
         let formulaNames: [String] = getFormulas()
         let infoTopics: [String] = getTopics()
-        
-        VStack{
-            NavigationView{
+        NavigationView{
+            VStack{
+                
+                Text("Информация").font(.title3)
                 Form{
                     Picker(selection: $num1, label: Text("Темы")){
                         ForEach(infoTopics, id: \.self) { tName in
@@ -44,11 +45,10 @@ struct ContentView: View {
                     }
                     Text(infos[num1].topic ?? "")
                     Text(infos[num1].textInfo ?? "")
-                }.navigationTitle("Справочник по физике")
-            }
-            NavigationView{
+                }
+                Spacer()
+                Text("Формулы").font(.title3)
                 Form{
-                    
                     Picker(selection: $num, label: Text("Названия формул")){
                         ForEach(formulaNames, id: \.self) { formulaN in
                             Text(formulaN)
@@ -57,10 +57,14 @@ struct ContentView: View {
                     Text(formulas[num].name ?? "")
                     Text(formulas[num].formula ?? "")
                     Text(formulas[num].information ?? "")
-                    
-                    
-                }.navigationTitle("Формулы")
-            }
+                }
+                Spacer()
+                Text("Калкулятор").font(.title3)
+                Form{
+                    Text("Приставка")
+                }
+                
+            }.navigationTitle("Справочник по физике")
         }
     }
 }

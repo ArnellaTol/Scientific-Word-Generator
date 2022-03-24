@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-
 class DataBaseController: ObservableObject{
     let contailer = NSPersistentContainer(name: "FormulasDB")
     

@@ -33,13 +33,14 @@ struct AddInfo: View{
                     }
                 }
                 
-                let info = setInfo(topic: self.topic, textInfo: self.textInfo)
+                //let info = setInfo(topic: self.topic, textInfo: self.textInfo)
                 
             }.navigationTitle("Добавление информации")
         }
     }
 }
 
+/*
 func setInfo(topic: String, textInfo: String) -> Information{
     @FetchRequest(sortDescriptors: []) var infos: FetchedResults<Information>
     @Environment(\.managedObjectContext) var moc
@@ -48,3 +49,4 @@ func setInfo(topic: String, textInfo: String) -> Information{
     info.textInfo = textInfo
     return info
 }
+*/

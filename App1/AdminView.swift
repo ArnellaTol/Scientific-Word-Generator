@@ -1,13 +1,14 @@
 //
-//  ContentView.swift
-//  App1Admin
+//  AdminView.swift
+//  App1
 //
-//  Created by Arnella Tolegen on 20.03.2022.
+//  Created by Arnella Tolegen on 24.03.2022.
 //
 
+import Foundation
 import SwiftUI
 
-struct ContentView: View {
+struct AdminView: View {
     var body: some View {
         NavigationView{
             Form{
@@ -19,11 +20,5 @@ struct ContentView: View {
             }.navigationTitle("Изменение данных")
             
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

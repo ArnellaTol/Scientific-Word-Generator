@@ -14,21 +14,16 @@
 		0C0E39412799776B0007F3CE /* App1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E39402799776B0007F3CE /* App1Tests.swift */; };
 		0C0E394B2799776B0007F3CE /* App1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E394A2799776B0007F3CE /* App1UITests.swift */; };
 		0C0E394D2799776B0007F3CE /* App1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E394C2799776B0007F3CE /* App1UITestsLaunchTests.swift */; };
-		0C1EAE4127E716960034D735 /* App1AdminApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE4027E716960034D735 /* App1AdminApp.swift */; };
-		0C1EAE4527E716970034D735 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EAE4427E716970034D735 /* Assets.xcassets */; };
-		0C1EAE4827E716970034D735 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1EAE4727E716970034D735 /* Preview Assets.xcassets */; };
-		0C1EAE5227E716970034D735 /* App1AdminTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE5127E716970034D735 /* App1AdminTests.swift */; };
-		0C1EAE5C27E716970034D735 /* App1AdminUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE5B27E716970034D735 /* App1AdminUITests.swift */; };
-		0C1EAE5E27E716970034D735 /* App1AdminUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE5D27E716970034D735 /* App1AdminUITestsLaunchTests.swift */; };
-		0C1EAE6827E7174B0034D735 /* InfoAdding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE3527E70DC00034D735 /* InfoAdding.swift */; };
-		0C1EAE6927E7174B0034D735 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE3427E70DC00034D735 /* InfoView.swift */; };
-		0C1EAE6A27E7174B0034D735 /* FormulaAdding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE3327E70DC00034D735 /* FormulaAdding.swift */; };
-		0C1EAE6B27E7174B0034D735 /* FormulaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE3127E70DC00034D735 /* FormulaView.swift */; };
-		0C1EAE6F27E717E80034D735 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE6E27E717E80034D735 /* ContentView.swift */; };
-		0C1EAE7527E71C3C0034D735 /* DataBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE7427E71C3C0034D735 /* DataBaseController.swift */; };
-		0C1EAE7827E71FAF0034D735 /* FDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE7627E71FAF0034D735 /* FDB.xcdatamodeld */; };
+		0C1E179727EC95B400698ED9 /* FormulaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE3127E70DC00034D735 /* FormulaView.swift */; };
+		0C1E179827EC95BB00698ED9 /* FormulaAdding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE3327E70DC00034D735 /* FormulaAdding.swift */; };
+		0C1E179927EC95BF00698ED9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE3427E70DC00034D735 /* InfoView.swift */; };
+		0C1E179A27EC95C300698ED9 /* InfoAdding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1EAE3527E70DC00034D735 /* InfoAdding.swift */; };
+		0C1E179B27EC95C700698ED9 /* FractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CACC9D727EC768D0034B5A8 /* FractionView.swift */; };
+		0C1E179C27EC95CB00698ED9 /* FractionAdding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CACC9D927EC76B60034B5A8 /* FractionAdding.swift */; };
+		0CACC9DF27EC87F00034B5A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E39362799776B0007F3CE /* Preview Assets.xcassets */; };
+		0CACC9E027EC88C20034B5A8 /* FormulasDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0CF9BC5D27CB559C001F90DA /* FormulasDB.xcdatamodeld */; };
+		0CACC9E527EC94010034B5A8 /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CACC9E427EC94010034B5A8 /* AdminView.swift */; };
 		0CF996BE27D0D3EC002793FC /* DataBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF996BD27D0D3EC002793FC /* DataBaseController.swift */; };
-		0CF9BC5F27CB559C001F90DA /* FormulasDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0CF9BC5D27CB559C001F90DA /* FormulasDB.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,17 +94,11 @@
 		0C1EAE3427E70DC00034D735 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		0C1EAE3527E70DC00034D735 /* InfoAdding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAdding.swift; sourceTree = "<group>"; };
 		0C1EAE3E27E716960034D735 /* App1Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App1Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C1EAE4027E716960034D735 /* App1AdminApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App1AdminApp.swift; sourceTree = "<group>"; };
-		0C1EAE4427E716970034D735 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0C1EAE4727E716970034D735 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C1EAE4D27E716970034D735 /* App1AdminTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App1AdminTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C1EAE5127E716970034D735 /* App1AdminTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App1AdminTests.swift; sourceTree = "<group>"; };
 		0C1EAE5727E716970034D735 /* App1AdminUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App1AdminUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C1EAE5B27E716970034D735 /* App1AdminUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App1AdminUITests.swift; sourceTree = "<group>"; };
-		0C1EAE5D27E716970034D735 /* App1AdminUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App1AdminUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0C1EAE6E27E717E80034D735 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0C1EAE7427E71C3C0034D735 /* DataBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseController.swift; sourceTree = "<group>"; };
-		0C1EAE7727E71FAF0034D735 /* FDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FDB.xcdatamodel; sourceTree = "<group>"; };
+		0CACC9D727EC768D0034B5A8 /* FractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionView.swift; sourceTree = "<group>"; };
+		0CACC9D927EC76B60034B5A8 /* FractionAdding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionAdding.swift; sourceTree = "<group>"; };
+		0CACC9E427EC94010034B5A8 /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
 		0CF996BD27D0D3EC002793FC /* DataBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseController.swift; sourceTree = "<group>"; };
 		0CF9BC5E27CB559C001F90DA /* FormulasDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FormulasDB.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,12 +152,8 @@
 		0C0E39232799776A0007F3CE = {
 			isa = PBXGroup;
 			children = (
-				0CF9BC5D27CB559C001F90DA /* FormulasDB.xcdatamodeld */,
-				0C1EAE3F27E716960034D735 /* App1Admin */,
 				0C0E392E2799776A0007F3CE /* App1 */,
 				0C0E39492799776B0007F3CE /* App1UITests */,
-				0C1EAE5027E716970034D735 /* App1AdminTests */,
-				0C1EAE5A27E716970034D735 /* App1AdminUITests */,
 				0C0E392D2799776A0007F3CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -191,7 +176,15 @@
 			children = (
 				0C0E392F2799776A0007F3CE /* App1App.swift */,
 				0C0E39312799776A0007F3CE /* ContentView.swift */,
+				0CF9BC5D27CB559C001F90DA /* FormulasDB.xcdatamodeld */,
 				0CF996BD27D0D3EC002793FC /* DataBaseController.swift */,
+				0CACC9E427EC94010034B5A8 /* AdminView.swift */,
+				0C1EAE3127E70DC00034D735 /* FormulaView.swift */,
+				0C1EAE3327E70DC00034D735 /* FormulaAdding.swift */,
+				0C1EAE3427E70DC00034D735 /* InfoView.swift */,
+				0C1EAE3527E70DC00034D735 /* InfoAdding.swift */,
+				0CACC9D727EC768D0034B5A8 /* FractionView.swift */,
+				0CACC9D927EC76B60034B5A8 /* FractionAdding.swift */,
 				0C0E39332799776B0007F3CE /* Assets.xcassets */,
 				0C0E39352799776B0007F3CE /* Preview Content */,
 			);
@@ -222,48 +215,6 @@
 				0C0E394C2799776B0007F3CE /* App1UITestsLaunchTests.swift */,
 			);
 			path = App1UITests;
-			sourceTree = "<group>";
-		};
-		0C1EAE3F27E716960034D735 /* App1Admin */ = {
-			isa = PBXGroup;
-			children = (
-				0C1EAE4027E716960034D735 /* App1AdminApp.swift */,
-				0C1EAE6E27E717E80034D735 /* ContentView.swift */,
-				0C1EAE3327E70DC00034D735 /* FormulaAdding.swift */,
-				0C1EAE3127E70DC00034D735 /* FormulaView.swift */,
-				0C1EAE3527E70DC00034D735 /* InfoAdding.swift */,
-				0C1EAE3427E70DC00034D735 /* InfoView.swift */,
-				0C1EAE7427E71C3C0034D735 /* DataBaseController.swift */,
-				0C1EAE4427E716970034D735 /* Assets.xcassets */,
-				0C1EAE4627E716970034D735 /* Preview Content */,
-				0C1EAE7627E71FAF0034D735 /* FDB.xcdatamodeld */,
-			);
-			path = App1Admin;
-			sourceTree = "<group>";
-		};
-		0C1EAE4627E716970034D735 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				0C1EAE4727E716970034D735 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		0C1EAE5027E716970034D735 /* App1AdminTests */ = {
-			isa = PBXGroup;
-			children = (
-				0C1EAE5127E716970034D735 /* App1AdminTests.swift */,
-			);
-			path = App1AdminTests;
-			sourceTree = "<group>";
-		};
-		0C1EAE5A27E716970034D735 /* App1AdminUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0C1EAE5B27E716970034D735 /* App1AdminUITests.swift */,
-				0C1EAE5D27E716970034D735 /* App1AdminUITestsLaunchTests.swift */,
-			);
-			path = App1AdminUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,8 +414,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1EAE4827E716970034D735 /* Preview Assets.xcassets in Resources */,
-				0C1EAE4527E716970034D735 /* Assets.xcassets in Resources */,
+				0CACC9DF27EC87F00034B5A8 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,10 +439,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1E179927EC95BF00698ED9 /* InfoView.swift in Sources */,
+				0C1E179827EC95BB00698ED9 /* FormulaAdding.swift in Sources */,
 				0CF996BE27D0D3EC002793FC /* DataBaseController.swift in Sources */,
+				0C1E179C27EC95CB00698ED9 /* FractionAdding.swift in Sources */,
+				0C1E179727EC95B400698ED9 /* FormulaView.swift in Sources */,
 				0C0E39322799776A0007F3CE /* ContentView.swift in Sources */,
+				0CACC9E027EC88C20034B5A8 /* FormulasDB.xcdatamodeld in Sources */,
+				0C1E179A27EC95C300698ED9 /* InfoAdding.swift in Sources */,
 				0C0E39302799776A0007F3CE /* App1App.swift in Sources */,
-				0CF9BC5F27CB559C001F90DA /* FormulasDB.xcdatamodeld in Sources */,
+				0C1E179B27EC95C700698ED9 /* FractionView.swift in Sources */,
+				0CACC9E527EC94010034B5A8 /* AdminView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,14 +474,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1EAE6927E7174B0034D735 /* InfoView.swift in Sources */,
-				0C1EAE6B27E7174B0034D735 /* FormulaView.swift in Sources */,
-				0C1EAE6F27E717E80034D735 /* ContentView.swift in Sources */,
-				0C1EAE6827E7174B0034D735 /* InfoAdding.swift in Sources */,
-				0C1EAE7827E71FAF0034D735 /* FDB.xcdatamodeld in Sources */,
-				0C1EAE6A27E7174B0034D735 /* FormulaAdding.swift in Sources */,
-				0C1EAE7527E71C3C0034D735 /* DataBaseController.swift in Sources */,
-				0C1EAE4127E716960034D735 /* App1AdminApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +481,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1EAE5227E716970034D735 /* App1AdminTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,8 +488,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1EAE5E27E716970034D735 /* App1AdminUITestsLaunchTests.swift in Sources */,
-				0C1EAE5C27E716970034D735 /* App1AdminUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,7 +707,6 @@
 		0C0E39542799776B0007F3CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -785,7 +730,6 @@
 		0C0E39552799776B0007F3CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -809,7 +753,6 @@
 		0C0E39572799776B0007F3CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -831,7 +774,6 @@
 		0C0E39582799776B0007F3CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -909,7 +851,6 @@
 		0C1EAE6327E716970034D735 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -933,7 +874,6 @@
 		0C1EAE6427E716970034D735 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -957,7 +897,6 @@
 		0C1EAE6627E716970034D735 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -979,7 +918,6 @@
 		0C1EAE6727E716970034D735 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1067,16 +1005,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0C1EAE7627E71FAF0034D735 /* FDB.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0C1EAE7727E71FAF0034D735 /* FDB.xcdatamodel */,
-			);
-			currentVersion = 0C1EAE7727E71FAF0034D735 /* FDB.xcdatamodel */;
-			path = FDB.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		0CF9BC5D27CB559C001F90DA /* FormulasDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
@@ -1086,6 +1014,7 @@
 			path = FormulasDB.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
+			wrapsLines = 1;
 		};
 /* End XCVersionGroup section */
 	};

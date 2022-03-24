@@ -25,7 +25,7 @@ struct InfoView: View{
                 
                 TextField("Тема",text: $topicName)
                 Button("Удалить"){
-                    for var info1 in infos {
+                    for info1 in infos {
                         if(topicName == info1.topic){
                             infoForDelete = info1
                         }
