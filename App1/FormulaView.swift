@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct FormulaView: View{
-    
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var formulas: FetchedResults<Formulas>
     var formula: Formulas?

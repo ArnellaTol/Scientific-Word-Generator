@@ -63,6 +63,7 @@ struct ContentView: View {
                 Form{
                     Text("Приставка")
                 }
+                NavigationLink("Info change", destination: InfoView())
                 
             }.navigationTitle("Справочник по физике")
         }
