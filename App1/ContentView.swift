@@ -15,6 +15,11 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: []) var infos: FetchedResults<Information>
     @State var num1 = 0
     
+    @FetchRequest(sortDescriptors: []) var calc: FetchedResults<DecimalFractions>
+    @State var num2 = 0
+    @State var fractionNumText = ""
+    @State var fractionNum: Float = 0.0
+    
     func getFormulas() -> [String]{
         var allNames: [String] = []
         for f in formulas{
@@ -61,9 +66,19 @@ struct ContentView: View {
                 Spacer()
                 Text("Калкулятор").font(.title3)
                 Form{
-                    Text("Приставка")
+                    TextField("Численное значение",text: $fractionNumText)
+                    /*
+                    Picker(selection: $num2, label: Text("Обозначение (приставка)")){
+                        ForEach(formulaNames, id: \.self) { formulaN in
+                            Text(formulaN)
+                        }
+                    }
+                     */
+                    Button("Результат"){
+                        fractionNum = NumberFormatter().number(from: fractionNumText)?.floatValue ?? 0.0
+                    }
                 }
-                NavigationLink("Info change", destination: InfoView())
+                NavigationLink("View for admin", destination: AdminCheck()).foregroundColor(.white)
                 
             }.navigationTitle("Справочник по физике")
         }
