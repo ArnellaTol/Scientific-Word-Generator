@@ -16,9 +16,14 @@ struct ContentView: View {
     @State var num1 = 0
     
     @FetchRequest(sortDescriptors: []) var calc: FetchedResults<DecimalFractions>
-    @State var num2 = 0
+    @State var numCalc1 = 0
+    @State var numCalc2 = 0
     @State var fractionNumText = ""
-    @State var fractionNum: Float = 0.0
+    @State var fractionNum: Double = 0.0
+    @State var resultFractionNum: Double = 0.0
+    @State var resultFractionNumPower = ""
+    @State var power1: Int16 = 0
+    @State var power2: Int16 = 0
     
     func getFormulas() -> [String]{
         var allNames: [String] = []
@@ -35,9 +40,18 @@ struct ContentView: View {
         }
         return allTopics
     }
+    
+    func getSymbolsPrefix() ->[String]{
+        var allSymbols: [String] = []
+        for s in calc{
+            allSymbols.append("\(s.symbol ?? "Unknown") (\(s.prefix ?? "Unknown"))")
+        }
+        return allSymbols
+    }
     var body: some View {
         let formulaNames: [String] = getFormulas()
         let infoTopics: [String] = getTopics()
+        let calcSymbols: [String] = getSymbolsPrefix()
         NavigationView{
             VStack{
                 
@@ -67,16 +81,54 @@ struct ContentView: View {
                 Text("Калкулятор").font(.title3)
                 Form{
                     TextField("Численное значение",text: $fractionNumText)
-                    /*
-                    Picker(selection: $num2, label: Text("Обозначение (приставка)")){
-                        ForEach(formulaNames, id: \.self) { formulaN in
-                            Text(formulaN)
+                    
+                    Picker(selection: $numCalc1, label: Text("Обозначение (приставка) исходного значения")){
+                        ForEach(calcSymbols, id: \.self) { symbol in
+                            Text(symbol)
                         }
                     }
-                     */
-                    Button("Результат"){
-                        fractionNum = NumberFormatter().number(from: fractionNumText)?.floatValue ?? 0.0
+                    
+                    Picker(selection: $numCalc2, label: Text("Обозначение (приставка) нужного значения")){
+                        ForEach(calcSymbols, id: \.self) { symbol in
+                            Text(symbol)
+                        }
                     }
+                     
+                    Button("Вычислить"){
+                        fractionNum = NumberFormatter().number(from: fractionNumText)?.doubleValue ?? 0.0
+                        for elem in calc{
+                            if("\(elem.symbol) (\(elem.prefix))" == calcSymbols[numCalc1]){
+                                power1 = elem.fraction
+                            }
+                        }
+                        if(power1>0){
+                            for _ in 1...power1{
+                                fractionNum *= 10
+                            }
+                        }
+                        else if(power1<0){
+                            for _ in power1...(-1){
+                                fractionNum *= 0.1
+                            }
+                        }
+                        for elem in calc{
+                            if("\(elem.symbol) (\(elem.prefix))" == calcSymbols[numCalc2]){
+                                power2 = elem.fraction
+                            }
+                        }
+                        if(power2>0){
+                            for _ in 1...power2{
+                                fractionNum *= 10
+                            }
+                        }
+                        else if(power2<0){
+                            for _ in power2...(-1){
+                                fractionNum *= 0.1
+                            }
+                        }
+                        resultFractionNum = fractionNum
+                    }
+                    Text("Результат: \(resultFractionNum)")
                 }
                 NavigationLink("View for admin", destination: AdminCheck()).foregroundColor(.white)
                 
