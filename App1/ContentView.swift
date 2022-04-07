@@ -16,6 +16,7 @@ struct ContentView: View {
     @State var num1 = 0
     
     @FetchRequest(sortDescriptors: []) var calc: FetchedResults<DecimalFractions>
+    
     @State var numCalc1 = 0
     @State var numCalc2 = 0
     @State var fractionNumText = ""
@@ -25,36 +26,13 @@ struct ContentView: View {
     @State var power1: Int16 = 0
     @State var power2: Int16 = 0
     
-    func getFormulas() -> [String]{
-        var allNames: [String] = []
-        for f in formulas{
-            allNames.append(f.name ?? "Unknown")
-        }
-        return allNames
-    }
-
-    func getTopics() -> [String]{
-        var allTopics: [String] = []
-        for t in infos{
-            allTopics.append(t.topic ?? "Unknown")
-        }
-        return allTopics
-    }
-    
-    func getSymbolsPrefix() ->[String]{
-        var allSymbols: [String] = []
-        for s in calc{
-            allSymbols.append("\(s.symbol ?? "Unknown") (\(s.prefix ?? "Unknown"))")
-        }
-        return allSymbols
-    }
     var body: some View {
-        let formulaNames: [String] = getFormulas()
-        let infoTopics: [String] = getTopics()
-        let calcSymbols: [String] = getSymbolsPrefix()
+        let formulaNames: [String] = formulas.map{($0.name ?? "Unknown")+": "+($0.formula ?? "Unknown")}
+        let infoTopics: [String] = infos.map{$0.topic ?? "Unknown"}
+        let calcSymbols: [String] = calc.sorted{$0.fraction < $1.fraction}.map{($0.symbol ?? "Unknown")+" ("+($0.prefix ?? "Unknown")+")"}
+        
         NavigationView{
             VStack{
-                
                 Text("Информация").font(.title3)
                 Form{
                     Picker(selection: $num1, label: Text("Темы")){
@@ -78,7 +56,7 @@ struct ContentView: View {
                     Text(formulas[num].information ?? "")
                 }
                 Spacer()
-                Text("Калкулятор").font(.title3)
+                Text("Конвентер единиц измерения").font(.title3)
                 Form{
                     TextField("Численное значение",text: $fractionNumText)
                     
@@ -87,46 +65,25 @@ struct ContentView: View {
                             Text(symbol)
                         }
                     }
+                    Text(calcSymbols[numCalc1])
                     
                     Picker(selection: $numCalc2, label: Text("Обозначение (приставка) нужного значения")){
                         ForEach(calcSymbols, id: \.self) { symbol in
                             Text(symbol)
                         }
                     }
-                     
+                    Text(calcSymbols[numCalc2])
+                    
                     Button("Вычислить"){
                         fractionNum = NumberFormatter().number(from: fractionNumText)?.doubleValue ?? 0.0
-                        for elem in calc{
-                            if("\(elem.symbol) (\(elem.prefix))" == calcSymbols[numCalc1]){
-                                power1 = elem.fraction
-                            }
-                        }
-                        if(power1>0){
-                            for _ in 1...power1{
-                                fractionNum *= 10
-                            }
-                        }
-                        else if(power1<0){
-                            for _ in power1...(-1){
-                                fractionNum *= 0.1
-                            }
-                        }
-                        for elem in calc{
-                            if("\(elem.symbol) (\(elem.prefix))" == calcSymbols[numCalc2]){
-                                power2 = elem.fraction
-                            }
-                        }
-                        if(power2>0){
-                            for _ in 1...power2{
-                                fractionNum *= 10
-                            }
-                        }
-                        else if(power2<0){
-                            for _ in power2...(-1){
-                                fractionNum *= 0.1
-                            }
-                        }
-                        resultFractionNum = fractionNum
+                        power1 = calc[numCalc1].fraction
+                        print(calc[numCalc1].fraction)
+                        print("power1 \(power1)")
+                        resultFractionNum = fractionNum * pow(Double(10),Double(power1))
+                        power2 = calc[numCalc2].fraction
+                        print(calc[numCalc2].fraction)
+                        print("power2 \(power2)")
+                        resultFractionNum *= pow(Double(10),Double(power1))
                     }
                     Text("Результат: \(resultFractionNum)")
                 }

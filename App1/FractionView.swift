@@ -18,8 +18,10 @@ struct FractionView: View{
     var body: some View{
         NavigationView{
             VStack{
-                List(fractions){ fraction in HStack{
-                    Text("Обозначение: \(fraction.symbol ?? "Unknown"), Приставка: \(fraction.prefix ?? "Unknown"), Множитель (степень 10-ти): \(fraction.fraction)")
+                List{
+                    ForEach(fractions, id: \.self){ fraction in HStack{
+                        Text("Обозначение: \(fraction.symbol ?? "Unknown"), Приставка: \(fraction.prefix ?? "Unknown"), Множитель (степень 10-ти): \(fraction.fraction)")
+                    }
                     }
                 }
                 
