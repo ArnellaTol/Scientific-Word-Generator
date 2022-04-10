@@ -8,108 +8,49 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var formulas: FetchedResults<Formulas>
-    @State var num = 0
-    
-    @FetchRequest(sortDescriptors: []) var infos: FetchedResults<Information>
-    @State var num1 = 0
-    
-    @FetchRequest(sortDescriptors: []) var calc: FetchedResults<DecimalFractions>
-    
-    @State var numCalc1 = 0
-    @State var numCalc2 = 0
-    @State var fractionNumText = ""
-    @State var fractionNum: Double = 0.0
-    @State var resultFractionNum: Double = 0.0
-    @State var resultFractionNumPower = ""
-    @State var power1: Int16 = 0
-    @State var power2: Int16 = 0
-    
+    @State var select: Int? = 0
+
     var body: some View {
-        let formulaNames: [String] = formulas.map{($0.name ?? "Unknown")+": "+($0.formula ?? "Unknown")}
-        let infoTopics: [String] = infos.map{$0.topic ?? "Unknown"}
-        let calcSymbols: [String] = calc.sorted{$0.fraction < $1.fraction}.map{($0.symbol ?? "Unknown")+" ("+($0.prefix ?? "Unknown")+")"}
-        
-        NavigationView{
+       NavigationView{
             VStack{
-                Text("Информация").font(.title3)
-                Form{
-                    Picker(selection: $num1, label: Text("Темы")){
-                        ForEach(infoTopics, id: \.self) { tName in
-                            Text(tName)
-                        }
-                    }
-                    Text(infos[num1].topic ?? "")
-                    Text(infos[num1].textInfo ?? "")
+                Text("Справочник по физике").font(.system(size:60)).padding(EdgeInsets(top: -250, leading: 0, bottom: 0, trailing: 0))
+                NavigationLink(destination: InfoForUser(), tag: 1, selection: $select) {
+                    EmptyView()
                 }
-                Spacer()
-                Text("Формулы").font(.title3)
-                Form{
-                    Picker(selection: $num, label: Text("Названия формул")){
-                        ForEach(formulaNames, id: \.self) { formulaN in
-                            Text(formulaN)
-                        }
-                    }
-                    Text(formulas[num].name ?? "")
-                    Text(formulas[num].formula ?? "")
-                    Text(formulas[num].information ?? "")
+                NavigationLink(destination: FormulaForUser(), tag: 2, selection: $select) {
+                    EmptyView()
                 }
-                Spacer()
-                Text("Конвентер единиц измерения").font(.title3)
-                Form{
-                    TextField("Численное значение",text: $fractionNumText)
-                    
-                    Picker(selection: $numCalc1, label: Text("Обозначение (приставка) исходного значения")){
-                        ForEach(calcSymbols, id: \.self) { symbol in
-                            Text(symbol)
-                        }
-                    }
-                    Text(calcSymbols[numCalc1])
-                    
-                    Picker(selection: $numCalc2, label: Text("Обозначение (приставка) нужного значения")){
-                        ForEach(calcSymbols, id: \.self) { symbol in
-                            Text(symbol)
-                        }
-                    }
-                    Text(calcSymbols[numCalc2])
-                    
-                    Button("Вычислить"){
-                        fractionNum = NumberFormatter().number(from: fractionNumText)?.doubleValue ?? 0.0
-                        power1 = calc[numCalc1].fraction
-                        print(calc[numCalc1].fraction)
-                        print("power1 \(power1)")
-                        resultFractionNum = fractionNum * pow(Double(10),Double(power1))
-                        power2 = calc[numCalc2].fraction
-                        print(calc[numCalc2].fraction)
-                        print("power2 \(power2)")
-                        resultFractionNum *= pow(Double(10),Double(power1))
-                    }
-                    Text("Результат: \(resultFractionNum)")
+                NavigationLink(destination: ConventerForUser(), tag: 3, selection: $select) {
+                    EmptyView()
                 }
-                NavigationLink("View for admin", destination: AdminCheck()).foregroundColor(.white)
+                Button(action: {
+                    self.select = 1
+                }){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 50).frame(width: 300, height: 75).foregroundColor(Color.cyan)
+                        Text("Информация").foregroundColor(Color.white).font(.title).bold()
+                    }
+                }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                 
-            }.navigationTitle("Справочник по физике")
-        }
-    }
-}
-
-struct ToggleCustom: View{
-    var textToggle: String
-    @State var boolToggle: Bool
-    var body: some View{
-        Toggle(isOn: $boolToggle, label: {
-            Text(textToggle).foregroundColor(boolToggle ? Color.blue : Color.gray)
-        })
-    }
-}
-
-struct Menu: View{
-    var name: String
-    @State var color: Color
-    var body: some View{
-        ZStack{
-            
+                Button(action: {
+                    self.select = 2
+                }){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 50).frame(width: 300, height: 75).foregroundColor(Color.cyan)
+                        Text("Формулы").foregroundColor(Color.white).font(.title).bold()
+                    }
+                }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                
+                Button(action: {
+                    self.select = 3
+                }){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 50).frame(width: 300, height: 75).foregroundColor(Color.cyan)
+                        Text("Конвентер").foregroundColor(Color.white).font(.title).bold()
+                    }
+                }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                NavigationLink("View for admin", destination: AdminCheck()).foregroundColor(.white)
+            }
         }
     }
 }
