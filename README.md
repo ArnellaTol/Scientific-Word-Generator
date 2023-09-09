@@ -1,1 +1,1 @@
-# ProjectAppITSTEP
+# Scientific Word Generator
